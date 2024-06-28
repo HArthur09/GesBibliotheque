@@ -1,0 +1,4 @@
+stats general
+SELECT livre.Nom_Livre, livre.Date_enregistrement, livre.Quantité, livre.QuantiteDisponible, count(emprunts.Statut), count(emprunts.Nom_livre) from livre INNER JOIN emprunts on emprunts.Nom_livre = livre.Nom_Livre where livre.Nom_Livre = 'le seed' and emprunts.Statut = 'Emprunté';
+adherent le plus frequent
+SELECT Nom_adherent, count(Nom_adherent) from stats_adherent WHERE Date between ? and ? GROUP BY Nom_adherent ORDER BY COUNT(Nom_adherent) ASC
